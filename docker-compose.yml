@@ -9,6 +9,7 @@ services:
     command: npm run start
     volumes:
       - ./src/musician/:/opt/app/
+      - ./src/shared/:/opt/shared/
     ports:
       - 8080:8080
   auditor:
@@ -19,5 +20,6 @@ services:
     command: npm run start
     volumes:
       - ./src/auditor/:/opt/app/
+      - ./src/shared/:/opt/shared/
     ports:
       - 8081:8080
