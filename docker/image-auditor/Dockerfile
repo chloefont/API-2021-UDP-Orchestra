@@ -1,4 +1,5 @@
 FROM node:alpine
 WORKDIR /opt/app
-COPY /src/auditor/package.json ./package.json
-CMD ["npm", "install"]
+COPY /src/ ./
+RUN npm install --prefix ./auditor
+ENTRYPOINT [ "node", "/opt/app/auditor/index.js" ]
