@@ -6,6 +6,6 @@ const instrumentsKeys = Object.keys(instruments);
 const rdmKey = instrumentsKeys[(instrumentsKeys.length * Math.random()) << 0];
 
 let socket = dgram.createSocket("udp4");
-let musician = new Musician(rdmKey);
+let musician = new Musician(process.argv[2] ?? rdmKey);
 
 musician.play(socket);

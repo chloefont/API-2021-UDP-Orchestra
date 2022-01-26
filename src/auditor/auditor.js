@@ -47,6 +47,10 @@ class Auditor {
             return musician.lastTimeActive + protocol.PROTOCOL_MUSICIAN_TIMEOUT > now;
         });
     }
+
+    getActiveMuscians() {
+        return this.musicians;
+    }
 }
 
 module.exports = Auditor;
