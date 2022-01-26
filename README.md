@@ -124,21 +124,21 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | Pour transformer un objet javascript en JSON : ```JSON.stringify({ x: 5, y: 6 })```. Pour créer un objet javascript à partir d'un JSON : ```JSON.parse("{x:5}")``` |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | C'est le node package manager. Il permet aux développeurs open-source de partager leurs programmes. |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | `npm install` permet d'installer des paquets (sans arguments, cette commande permet d'installer toutes les dépendances se trouvant dans le fichier package.json). On peut ajouter comme argument le nom du paquet que l'on souhaite installer. Dans les nouvelles versions de npm, `--save` est appliqué par défaut. Il permettait d'indiquer que le paquet devait être installé uniquement pour le projet courant. |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | Ce site permet de retrouver des paquets rendus disponibles par d'autres développeurs (ainsi que leur documentation). Il suffit de rechercher le paquet en question dans la barre de recherche. |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | Nous avons installé le paquet 'uuid' et nous avons utiliser la fonction ``uui.dv4()```  |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | Avec la fonction `setInterval(func, time)`. La fonction `func`va donc s'exécuter tous les time temps.  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | Pour envpyer un datagramme, il faut utiliser la méthode `send` sur un socket. Ce dernier est créé avec la commande `dgram.createSocket('udp4')`.  |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | Avec la commande `process.argv`qui renvoie un tableau contenant tous les arguments passés en ligne de commande.  |
 
 
 ## Task 3: package the "musician" app in a Docker image
