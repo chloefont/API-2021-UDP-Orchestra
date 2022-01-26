@@ -1,12 +1,12 @@
+const Musician = require('./musician.js')
 const instruments = require("../shared/instruments");
-const protocol = require("../shared/protocol");
-const { v4: uuidv4 } = require('uuid');
 const dgram = require('dgram');
 
-let id = uuidv4();
-let socket = dgram.createSocket('udp4');
+const instrumentsKeys = Object.keys(instruments);
 
-socket.send(id, 0, id.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS, function(err, bytes) {
-    console.log("Sending payload: " + id + " via port " + socket.address().port);
-});
+let socket = dgram.createSocket('udp4');
+let musician = new Musician(instrumentsKeys[instrumentsKeys.length * Math.random() << 0]);
+
+musician.play(socket);
+
 
