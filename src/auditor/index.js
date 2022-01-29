@@ -9,9 +9,11 @@ auditor.listen();
 const server = net.createServer();
 server.on("connection", (conn) => {
     console.log("Client connected");
+    auditor.checkActiveMusicians();
     conn.write(JSON.stringify(auditor.getActiveMuscians()));
+    conn.destroy();
 });
 
-server.listen(8080, function () {
+server.listen(2205, function () {
     console.log("server listening to %j", server.address());
 });

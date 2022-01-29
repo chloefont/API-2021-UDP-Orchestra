@@ -14,7 +14,7 @@ class Auditor {
             this.socket.addMembership(protocol.PROTOCOL_MULTICAST_ADDRESS);
         });
 
-        setInterval(() => this.checkActiveMusicians(), protocol.PROTOCOL_MUSICIAN_TIMEOUT);
+        //setInterval(() => this.checkActiveMusicians(), protocol.PROTOCOL_MUSICIAN_TIMEOUT);
     }
 
     listen() {
@@ -49,7 +49,13 @@ class Auditor {
     }
 
     getActiveMuscians() {
-        return this.musicians;
+        return this.musicians.map((musician) => {
+            return {
+                uuid: musician.uuid,
+                instrument: musician.instrument,
+                activeSince: musician.activeSince,
+            };
+        });
     }
 }
 
