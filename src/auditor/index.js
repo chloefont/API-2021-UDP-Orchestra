@@ -9,7 +9,7 @@ auditor.listen();
 const server = net.createServer();
 server.on("connection", (conn) => {
     console.log("Client connected");
-    auditor.checkActiveMusicians();
+    auditor.removeInactiveMusicians();
     conn.write(JSON.stringify(auditor.getActiveMuscians()));
     conn.destroy();
 });

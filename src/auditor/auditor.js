@@ -41,7 +41,7 @@ class Auditor {
         });
     }
 
-    checkActiveMusicians() {
+    removeInactiveMusicians() {
         const now = Date.now();
         this.musicians = this.musicians.filter((musician) => {
             return musician.lastTimeActive + protocol.PROTOCOL_MUSICIAN_TIMEOUT > now;
