@@ -29,7 +29,7 @@ class Auditor {
                     instrument: Object.entries(instruments).find((current) => {
                         return current[1] == message.sound;
                     })[0],
-                    activeSince: Date.now(),
+                    activeSince: new Date().toISOString(),
                     lastTimeActive: Date.now(),
                 };
 
