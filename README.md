@@ -146,17 +146,17 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | Il y a plusieurs manières manières de faire. Une option serait de créer un Dockerfile, d'y importer une image déjà existante et d'y rajouter des options, comme des commandes à lancer au démarrage.  |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | C'est la commande exécutée au lancement du container. Elle prend également en arguments les arguments passés au lancement du container.  |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | Avec la commande ```docker run [OPTIONS] IMAGE [COMMAND] [ARG...]```  |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | En utilisant la commande ```docker ps```  |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | Avec les commandes ```docker stop [OPTIONS] CONTAINER [CONTAINER...]``` ou ```docker kill [OPTIONS] CONTAINER [CONTAINER...]```  |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | En utilisant des outils d'analyse de traffic comme, par exemple, Wireshark.  |
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -164,15 +164,15 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | En écoutant une adresse ip de multicast UDP avec la commande ```socket.addMembership(<adresse multicast>)```  |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | ```const instruments = { piano: "ti-ta-ti", trumpet: "pouet", flute:"trulu", violin: "gzi-gzi", drum: "boum-boum" }``` |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | Nous n'avons pas utilisé le module `Moment.js` mais la fonction ```new Date().toISOString()``` |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | Lorsqu'une connexion TCP est effectuée, le serveur (auditeur) met à jour son tableau de musiciens et supprime les musiciens inactifs depuis plus de 5 secondes. |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | On peut utiliser le module `net` avec les fonctions : ```const server = net.createServer();``` et ```server.listen(2205, function () {...})``` |
 
 
 ## Task 5: package the "auditor" app in a Docker image
@@ -180,7 +180,7 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | En exécutant le script `./validate.sh` |
 
 
 ## Constraints
