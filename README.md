@@ -1,5 +1,7 @@
 # Teaching-HEIGVD-RES-2020-Labo-Orchestra
 
+**ATTENTION** : Nous avons modifié les lignes 32 et 33 du fichier `validate.sh` pour changer le contexte d'exécution.
+
 ## Admin
 
 * **You can work in groups of 2 students**.
